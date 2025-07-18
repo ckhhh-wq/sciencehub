@@ -1,0 +1,138 @@
+<html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG售后频道 - 科技服务平台</title>
+    <!-- 引入Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入Font Awesome图标库 -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- 配置Tailwind自定义颜色和字体 -->
+    <!-- JavaScript功能 - 处理页面交互效果 -->
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tech: {
+                            dark: '#0F172A',
+                            light: '#1E293B',
+                            accent: '#3B82F6',
+                            highlight: '#60A5FA'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .box-gradient {
+                background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+            }
+            .hover-lift {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .hover-lift:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <!-- 导航栏 -->
+    <!-- 导航栏 - 固定在顶部，包含网站标志和用户操作按钮 -->
+<nav class="bg-tech-dark/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fa fa-cube text-tech-accent text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">科技服务平台</span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                        <i class="fa fa-search mr-1"></i> 搜索
+                    </button>
+                    <button class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                        <i class="fa fa-user mr-1"></i> 登录
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <!-- 主要内容区域 - 展示TG售后频道信息 -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 mt-8 text-center">
+          <div class="text-left mb-12">
+            <!-- 返回按钮 - 跳转到科技网站首页 -->
+<a href="javascript:history.back()" class="text-2xl font-semibold text-gray-300 hover:text-white border border-tech-accent rounded-full px-4 py-2">返回</a>
+          </div>
+          <h2 class="text-3xl font-bold mb-8">TG售后频道</h2>
+          <!-- 售后信息卡片 - 展示售后支持状态和联系按钮 -->
+<div class="box-gradient rounded-xl p-8 border border-gray-800 max-w-2xl mx-auto">
+              <i class="fa fa-comments text-tech-accent text-5xl mb-6"></i>
+              <p class="text-xl text-gray-300 mb-8">售后支持服务即将上线，敬请期待...</p>
+              <div class="flex justify-center">
+                  <button class="bg-tech-accent hover:bg-tech-highlight text-white px-8 py-3 rounded-lg font-medium transition-colors shadow-lg">
+    <i class="fa fa-paper-plane mr-2"></i> 联系我们
+</button>
+              </div>
+          </div>
+    </div>
+
+    <!-- 底部信息 -->
+    <!-- 底部信息 - 包含网站版权信息和联系方式 -->
+<footer class="bg-tech-dark border-t border-gray-800 py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fa fa-cube text-tech-accent text-xl mr-2"></i>
+                        <span class="text-lg font-bold">科技服务平台</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mt-1">专业的科技服务解决方案提供商</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" title="QQ">
+                        <i class="fa fa-qq text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" title="微信">
+                        <i class="fa fa-weixin text-xl"></i>
+                    </a>
+                    <a href="mailto:" class="text-gray-400 hover:text-white transition-colors" title="QQ邮箱">
+                        <i class="fa fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-6 pt-6 border-t border-gray-800 text-center text-gray-500 text-sm">© 2023 科技服务平台 版权所有</div>
+        </div>
+    </footer>
+
+    <script>
+        // 页面滚动时导航栏效果
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-lg');
+                nav.classList.remove('border-b');
+            } else {
+                nav.classList.remove('shadow-lg');
+                nav.classList.add('border-b');
+            }
+        });
+    </script>
+
+
+    </body></html>

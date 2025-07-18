@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>和平内核 - 商品详情</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tech: {
+                            dark: '#0f172a',
+                            light: '#1e293b',
+                            accent: '#3b82f6',
+                            hover: '#2563eb',
+                            text: '#e2e8f0'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .box-gradient {
+                background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+            }
+            .hover-lift {
+                transition: all 0.3s ease;
+            }
+            .hover-lift:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1), 0 8px 10px -6px rgba(59, 130, 246, 0.1);
+                cursor: pointer;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+    <!-- 导航栏 - 包含网站标志和用户操作按钮 -->
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-tech-dark/80 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="bg-tech-accent hover:bg-tech-hover text-white px-4 py-2 rounded-lg transition-colors mr-4">
+                        <i class="fa fa-home mr-1"></i> 返回首页
+                    </a>
+                    <span class="text-xl font-bold text-tech-accent">科技服务平台</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-300 hover:text-white transition-colors">
+                        <i class="fa fa-search text-lg"></i>
+                    </button>
+                    <button class="bg-tech-accent hover:bg-tech-hover text-white px-4 py-2 rounded-lg transition-colors">
+                        登录
+                    </button>
+                </div>
+            </div>
+
+
+
+    </div>
+    </nav>
+
+    <!-- 主横幅 - 显示页面标题和简介 -->
+    <div class="relative overflow-hidden bg-tech-dark py-16 md:py-24">
+        <div class="absolute inset-0">
+            <div class="absolute right-1/4 top-0 w-96 h-96 bg-tech-accent/20 rounded-full blur-3xl"></div>
+            <div class="absolute left-1/3 bottom-0 w-72 h-72 bg-purple-600 rounded-full blur-3xl"></div>
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-shadow mb-4">和平内核</h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">和平游戏内核优化与功能增强，提供全方位的技术支持与解决方案</p>
+        </div>
+    </div>
+
+    <!-- 商品详情选项区 - 展示四种会员卡片 -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-2xl font-bold">商品详情选项</h2>
+            <div class="flex space-x-4">
+                <!-- 游戏内效果展示按钮 -->
+                <button id="showEffectBtn" class="bg-tech-accent hover:bg-tech-hover text-white px-6 py-3 rounded-lg font-medium transition-colors shadow-lg flex items-center">
+                    <i class="fa fa-gamepad mr-2"></i> 游戏内效果展示
+                </button>
+                <!-- QQ售后按钮 -->
+                <a href="链接QQ售后频道.html" class="bg-tech-accent hover:bg-tech-hover text-white px-6 py-3 rounded-lg font-medium transition-colors shadow-lg flex items-center">
+                    <i class="fa fa-qq mr-2"></i> QQ售后支持
+                </a>
+            </div>
+        </div>
+
+        <!-- 四个选项，两列布局 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- 天卡商品卡片 - 24小时有效期 -->
+            <div class="box-gradient hover-lift rounded-xl p-6 border border-gray-800" data-link="支付页面.html?amount=15">
+                <div class="w-12 h-12 rounded-full bg-tech-accent/20 flex items-center justify-center mb-4">
+                    <i class="fa fa-microchip text-tech-accent text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">天卡</h3>
+                <p class="text-gray-400 mb-4">一天内享受全部高级功能</p>
+                <ul class="space-y-2 text-gray-300">
+                    <li class="flex items-center"><i class="fa fa-check text-green-400 mr-2"></i> 24小时有效</li>
+                    <li class="flex items-center"><i class="fa fa-check text-green-400 mr-2"></i> 全功能访问</li>
+                </ul>
+                <p class="text-tech-accent font-bold text-2xl mt-4">¥15</p>
+            </div>
+
+            <!-- 周卡商品卡片 - 7天有效期 -->
+            <div class="box-gradient hover-lift rounded-xl p-6 border border-gray-800" data-link="支付页面.html?amount=60">
+                <div class="w-12 h-12 rounded-full bg-tech-accent/20 flex items-center justify-center mb-4">
+                    <i class="fa fa-shield text-tech-accent text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">周卡</h3>
+                <p class="text-gray-400 mb-4">七天内享受全部高级功能</p>
+                <ul class="space-y-2 text-gray-300">
+                    <li class="flex items-center"><i class="fa fa-check text-green-400 mr-2"></i> 7天有效</li>
+                    <li class="flex items-center"><i class="fa fa-check text-green-400 mr-2"></i> 全功能访问</li>
+                    <li class="flex items-center"><i class="fa fa-check text-green-400 mr-2"></i> 普通售后</li>
+                </ul>
+                <p class="text-tech-accent font-bold text-2xl mt-4">¥60</p>
+            </div>
+
+            <!-- 月卡商品卡片 - 30天有效期 -->
+            <div class="box-gradient hover-lift rounded-xl p-6 border border-gray-800" data-link="支付页面.html?amount=200">
+                <div class="w-12 h-12 rounded-full bg-tech-accent/20 flex items-center justify-center mb-4">
+                    <i class="fa fa-cogs text-tech-accent text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">月卡</h3>
+                <p class="text-gray-400 mb-4">三十天内享受全部高级功能</p>
+                <ul class="space-y-2 text-gray-300">
+                    <li class="flex items-center"><i class="fa fa-check text-green-400 mr-2"></i> 30天有效</li>
+                    <li class="flex items-center"><i class="fa fa-check text-green-400 mr-2"></i> 全功能访问</li>
+                    <li class="flex items-center"><i class="fa fa-check text-green-400 mr-2"></i> 普通售后</li>
+                </ul>
+                <p class="text-tech-accent font-bold text-2xl mt-4">¥200</p>
+            </div>
+
+            <!-- 永久卡商品卡片 - 终身有效 -->
+            <div class="box-gradient hover-lift rounded-xl p-6 border border-gray-800" data-link="支付页面.html?amount=988">
+                <div class="w-12 h-12 rounded-full bg-tech-accent/20 flex items-center justify-center mb-4">
+                    <i class="fa fa-life-ring text-tech-accent text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">永久卡</h3>
+                <p class="text-gray-400 mb-4">永久享受全部高级功能</p>
+                <ul class="space-y-2 text-gray-300">
+                    <li class="flex items-center"><i class="fa fa-check text-green-400 mr-2"></i> 终身有效</li>
+                    <li class="flex items-center"><i class="fa fa-check text-green-400 mr-2"></i> 全功能访问</li>
+                    <li class="flex items-center"><i class="fa fa-check text-green-400 mr-2"></i> 7*24h专属技术售后</li>
+                </ul>
+                <p class="text-tech-accent font-bold text-2xl mt-4">¥988</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 - 包含网站信息和联系方式 -->
+    <footer class="bg-tech-dark border-t border-gray-800 py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span class="text-lg font-semibold text-tech-accent">科技服务平台</span>
+                    <p class="text-gray-400 text-sm mt-1">专业的科技服务解决方案提供商</p>
+                </div>
+                <div class="flex space-x-6">
+                </div>
+            </div>
+            <div class="mt-6 pt-6 border-t border-gray-800 text-center text-gray-500 text-sm">
+                © 2023 科技服务平台 版权所有
+            </div>
+        </div>
+    </footer>
+
+    <!-- 游戏内效果展示模态框 -->
+    <div id="effectModal" class="fixed inset-0 bg-black/70 flex items-center justify-center z-50 hidden">
+        <div class="bg-tech-dark rounded-xl p-4 max-w-4xl w-full max-h-[90vh] overflow-auto">
+            <div class="flex justify-end mb-2">
+                <button id="closeModal" class="text-gray-300 hover:text-white text-xl">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+            <div class="text-center">
+                <img src="和平科技.jpg" alt="和平科技产品界面展示" class="max-w-full h-auto rounded-lg" onerror="this.src='https://via.placeholder.com/800x600?text=图片加载失败';">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 处理导航链接点击事件
+        document.querySelectorAll('[data-link]').forEach(item => {
+            item.addEventListener('click', function() {
+                window.location.href = this.getAttribute('data-link');
+            });
+        });
+
+        // 游戏内效果展示模态框控制
+        const effectModal = document.getElementById('effectModal');
+        const showEffectBtn = document.getElementById('showEffectBtn');
+        const closeModalBtn = document.getElementById('closeModal');
+
+        // 显示模态框
+        showEffectBtn.addEventListener('click', () => {
+            effectModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // 防止背景滚动
+        });
+
+        // 关闭模态框
+        function closeModal() {
+            effectModal.classList.add('hidden');
+            document.body.style.overflow = ''; // 恢复背景滚动
+        }
+
+        closeModalBtn.addEventListener('click', closeModal);
+
+        // 点击模态框背景也关闭
+        effectModal.addEventListener('click', (e) => {
+            if (e.target === effectModal) {
+                closeModal();
+            }
+        });
+
+        // 按ESC键关闭模态框
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !effectModal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
